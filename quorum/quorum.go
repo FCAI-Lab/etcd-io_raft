@@ -15,8 +15,8 @@
 package quorum
 
 /*
-#cgo LDFLAGS: -L. -lquorum
-#include "quorum.h"
+#cgo LDFLAGS: -L./quorumC -lquorum
+#include "quorumC/quorum.h"
 */
 import "C"
 
