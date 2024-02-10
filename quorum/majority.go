@@ -14,7 +14,13 @@
 
 package quorum
 
+/*
+#cgo LDFLAGS: -L./quorumC -lquorum
+#include "quorumC/majority.h"
+*/
+
 import (
+	"C"
 	"fmt"
 	"math"
 	"sort"
@@ -204,4 +210,9 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 		return VotePending
 	}
 	return VoteLost
+}
+
+//export MajorityConfigLength
+func MajorityConfigLength(c MajorityConfig) int {
+	return len(c)
 }

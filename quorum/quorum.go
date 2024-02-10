@@ -20,7 +20,6 @@ package quorum
 */
 import "C"
 
-
 // Index is a Raft log position.
 type Index uint64
 
@@ -36,6 +35,7 @@ type AckedIndexer interface {
 
 type mapAckIndexer map[uint64]Index
 
+//export AckedIndex
 func (m mapAckIndexer) AckedIndex(id uint64) (Index, bool) {
 	idx, ok := m[id]
 	return idx, ok
