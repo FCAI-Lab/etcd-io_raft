@@ -19,27 +19,85 @@ import (
 	"math"
 	"sort"
 	"strings"
+	"unsafe"
 )
+
+/*
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+
+int compare(const void *a, const void *b) {
+    return (*(int*)a - *(int*)b);
+}
+
+// sort slice by ascending & slice -> string
+const char* cMajorityConfig(int* sl, int size) {
+	qsort(sl, size, sizeof(int), compare);
+
+	char* buf = (char*)malloc((2 * size + 3) * sizeof(char));
+
+	// TEST Q&A : 100 200 300 -> 100 200 300 0 0 0 33 0
+	//for(int i = 0; i < sizeof(sl); i++){
+	//	printf("%d ", sl[i]);
+	//}
+	//printf("\n");
+
+	int index = 0;
+    buf[index++] = '(';
+    for (int i = 0; i < size; i++) {
+		if (i > 0) {
+            buf[index++] = ' ';
+        }
+        index += sprintf(buf + index, "%d", sl[i]);
+    }
+    buf[index++] = ')';
+    buf[index] = '\0';
+
+    return buf;
+}
+
+void insertSort(uint64_t *sl, int len) {
+    int a = 0, b = len;
+    for (int i = a + 1; i < b; i++) {
+		for (int j = i; j > a && sl[j] < sl[j-1]; j--) {
+			uint64_t tmp = sl[j];
+			sl[j] = sl[j-1];
+			sl[j-1] = tmp;
+		}
+	}
+}
+*/
+import "C"
 
 // MajorityConfig is a set of IDs that uses majority quorums to make decisions.
 type MajorityConfig map[uint64]struct{}
 
+// by chanjun
 func (c MajorityConfig) String() string {
+	// make slice
 	sl := make([]uint64, 0, len(c))
+
+	// push key only
 	for id := range c {
 		sl = append(sl, id)
 	}
-	sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
-	var buf strings.Builder
-	buf.WriteByte('(')
-	for i := range sl {
-		if i > 0 {
-			buf.WriteByte(' ')
-		}
-		fmt.Fprint(&buf, sl[i])
+
+	// Q&A : If pass an array directly, the array size changes
+	//		and 0s enter.
+	// Assignment C memory
+	size := len(sl) * int(unsafe.Sizeof(C.int(0)))
+	cArray := C.malloc(C.size_t(size))
+	defer C.free(cArray)
+
+	// Copy values ​​from Go slice to C array
+	for i, v := range sl {
+		offset := i * int(unsafe.Sizeof(C.int(0)))
+		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
+		*(*C.int)(ptr) = C.int(v)
 	}
-	buf.WriteByte(')')
-	return buf.String()
+
+	return C.GoString(C.cMajorityConfig((*C.int)(cArray), C.int(len(sl))))
 }
 
 // Describe returns a (multi-line) representation of the commit indexes for the
@@ -102,6 +160,7 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 	return buf.String()
 }
 
+// by chanjun
 // Slice returns the MajorityConfig as a sorted slice.
 func (c MajorityConfig) Slice() []uint64 {
 	var sl []uint64
@@ -112,12 +171,28 @@ func (c MajorityConfig) Slice() []uint64 {
 	return sl
 }
 
-func insertionSort(sl []uint64) {
-	a, b := 0, len(sl)
-	for i := a + 1; i < b; i++ {
-		for j := i; j > a && sl[j] < sl[j-1]; j-- {
-			sl[j], sl[j-1] = sl[j-1], sl[j]
-		}
+// by chanjun
+func insertionSort(arr []uint64) {
+	// C로 전달할 배열
+	size := len(arr) * int(unsafe.Sizeof(C.uint64_t(0)))
+	cArray := C.malloc(C.size_t(size))
+	defer C.free(cArray)
+
+	// Copy values ​​from Go slice to C array
+	for i, v := range arr {
+		offset := i * int(unsafe.Sizeof(C.uint64_t(0)))
+		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
+		*(*C.uint64_t)(ptr) = C.uint64_t(v)
+	}
+
+	// C 함수 호출
+	C.insertSort((*C.uint64_t)(cArray), C.int(len(arr)))
+
+	// 정렬된 결과를 다시 Go 슬라이스로 변환하고 testSlice에 할당
+	for i := range arr {
+		offset := i * int(unsafe.Sizeof(C.uint64_t(0)))
+		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
+		arr[i] = uint64(*(*C.uint64_t)(ptr))
 	}
 }
 

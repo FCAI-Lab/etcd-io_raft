@@ -20,7 +20,6 @@ package quorum
 */
 import "C"
 
-
 // Index is a Raft log position.
 type Index uint64
 
