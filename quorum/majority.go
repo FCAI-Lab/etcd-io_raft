@@ -23,50 +23,8 @@ import (
 )
 
 /*
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-
-int compare(const void *a, const void *b) {
-    return (*(int*)a - *(int*)b);
-}
-
-// sort slice by ascending & slice -> string
-const char* cMajorityConfig(int* sl, int size) {
-	qsort(sl, size, sizeof(int), compare);
-
-	char* buf = (char*)malloc((2 * size + 3) * sizeof(char));
-
-	// TEST Q&A : 100 200 300 -> 100 200 300 0 0 0 33 0
-	//for(int i = 0; i < sizeof(sl); i++){
-	//	printf("%d ", sl[i]);
-	//}
-	//printf("\n");
-
-	int index = 0;
-    buf[index++] = '(';
-    for (int i = 0; i < size; i++) {
-		if (i > 0) {
-            buf[index++] = ' ';
-        }
-        index += sprintf(buf + index, "%d", sl[i]);
-    }
-    buf[index++] = ')';
-    buf[index] = '\0';
-
-    return buf;
-}
-
-void insertSort(uint64_t *sl, int len) {
-    int a = 0, b = len;
-    for (int i = a + 1; i < b; i++) {
-		for (int j = i; j > a && sl[j] < sl[j-1]; j--) {
-			uint64_t tmp = sl[j];
-			sl[j] = sl[j-1];
-			sl[j-1] = tmp;
-		}
-	}
-}
+#cgo LDFLAGS: -L./majorityC -lmajority
+#include "majorityC/majority.h"
 */
 import "C"
 
@@ -83,21 +41,11 @@ func (c MajorityConfig) String() string {
 		sl = append(sl, id)
 	}
 
-	// Q&A : If pass an array directly, the array size changes
-	//		and 0s enter.
-	// Assignment C memory
-	size := len(sl) * int(unsafe.Sizeof(C.int(0)))
-	cArray := C.malloc(C.size_t(size))
-	defer C.free(cArray)
-
-	// Copy values ​​from Go slice to C array
-	for i, v := range sl {
-		offset := i * int(unsafe.Sizeof(C.int(0)))
-		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
-		*(*C.int)(ptr) = C.int(v)
+	if len(sl) != 0 {
+		return C.GoString(C.cMajorityConfig((unsafe.Pointer(&sl[0])), C.int(len(sl))))
+	} else {
+		return "()"
 	}
-
-	return C.GoString(C.cMajorityConfig((*C.int)(cArray), C.int(len(sl))))
 }
 
 // Describe returns a (multi-line) representation of the commit indexes for the
@@ -167,32 +115,22 @@ func (c MajorityConfig) Slice() []uint64 {
 	for id := range c {
 		sl = append(sl, id)
 	}
-	sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
+
+	// 조건문이 없으면 "index out of range [0] with length 0"라는 오류가 생김
+	// sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
+	if len(sl) != 0 {
+		C.cSlice(unsafe.Pointer(&sl[0]), C.int(len(sl)))
+	}
+
 	return sl
 }
 
 // by chanjun
+// insertionSort : just quick sort
 func insertionSort(arr []uint64) {
-	// C로 전달할 배열
-	size := len(arr) * int(unsafe.Sizeof(C.uint64_t(0)))
-	cArray := C.malloc(C.size_t(size))
-	defer C.free(cArray)
-
-	// Copy values ​​from Go slice to C array
-	for i, v := range arr {
-		offset := i * int(unsafe.Sizeof(C.uint64_t(0)))
-		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
-		*(*C.uint64_t)(ptr) = C.uint64_t(v)
-	}
-
-	// C 함수 호출
-	C.insertSort((*C.uint64_t)(cArray), C.int(len(arr)))
-
-	// 정렬된 결과를 다시 Go 슬라이스로 변환하고 testSlice에 할당
-	for i := range arr {
-		offset := i * int(unsafe.Sizeof(C.uint64_t(0)))
-		ptr := unsafe.Pointer(uintptr(cArray) + uintptr(offset))
-		arr[i] = uint64(*(*C.uint64_t)(ptr))
+	if len(arr) != 0 {
+		// C 함수 호출
+		C.cinsertionSort(unsafe.Pointer(&arr[0]), C.int(len(arr)))
 	}
 }
 
