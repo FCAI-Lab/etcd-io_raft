@@ -19,27 +19,33 @@ import (
 	"math"
 	"sort"
 	"strings"
+	"unsafe"
 )
+
+/*
+#cgo LDFLAGS: -L./majorityC -lmajority
+#include "majorityC/majority.h"
+*/
+import "C"
 
 // MajorityConfig is a set of IDs that uses majority quorums to make decisions.
 type MajorityConfig map[uint64]struct{}
 
+// by chanjun
 func (c MajorityConfig) String() string {
+	// make slice
 	sl := make([]uint64, 0, len(c))
+
+	// push key only
 	for id := range c {
 		sl = append(sl, id)
 	}
-	sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
-	var buf strings.Builder
-	buf.WriteByte('(')
-	for i := range sl {
-		if i > 0 {
-			buf.WriteByte(' ')
-		}
-		fmt.Fprint(&buf, sl[i])
+
+	if len(sl) != 0 {
+		return C.GoString(C.cMajorityConfig((unsafe.Pointer(&sl[0])), C.int(len(sl))))
+	} else {
+		return "()"
 	}
-	buf.WriteByte(')')
-	return buf.String()
 }
 
 // Describe returns a (multi-line) representation of the commit indexes for the
@@ -102,22 +108,29 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 	return buf.String()
 }
 
+// by chanjun
 // Slice returns the MajorityConfig as a sorted slice.
 func (c MajorityConfig) Slice() []uint64 {
 	var sl []uint64
 	for id := range c {
 		sl = append(sl, id)
 	}
-	sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
+
+	// 조건문이 없으면 "index out of range [0] with length 0"라는 오류가 생김
+	// sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] })
+	if len(sl) != 0 {
+		C.cSlice(unsafe.Pointer(&sl[0]), C.int(len(sl)))
+	}
+
 	return sl
 }
 
-func insertionSort(sl []uint64) {
-	a, b := 0, len(sl)
-	for i := a + 1; i < b; i++ {
-		for j := i; j > a && sl[j] < sl[j-1]; j-- {
-			sl[j], sl[j-1] = sl[j-1], sl[j]
-		}
+// by chanjun
+// insertionSort : just quick sort
+func insertionSort(arr []uint64) {
+	if len(arr) != 0 {
+		// C 함수 호출
+		C.cinsertionSort(unsafe.Pointer(&arr[0]), C.int(len(arr)))
 	}
 }
 
