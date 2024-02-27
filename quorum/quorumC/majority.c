@@ -4,12 +4,6 @@ char *DescribeC(void *c, void *l) {
   if (MajorityConfigLength(c) == 0) { // Admmited
     return "<empty majority quorum>";
   }
-  typedef struct {
-    uint64_t id;
-    Index idx;
-    bool ok;
-    int bar;
-  } tup;
 
   int n = MajorityConfigLength(c); // Admmited
   tup *info = malloc(n * sizeof(tup));
@@ -18,7 +12,7 @@ char *DescribeC(void *c, void *l) {
   }
 
   // Sort by index
-  // TODO: Sort
+  qsort(info, n, sizeof(tup), compare);
 
   // Populate .bar.
   for (int i = 0; i < n; ++i) {
@@ -45,4 +39,14 @@ char *DescribeC(void *c, void *l) {
     sprintf(buf, " %5d    (id=%d)\n", info[i].idx, info[i].id);
   }
   return buf;
+}
+
+int compare(const void *a, const void *b) {
+  tup a_comp = *(tup *)a;
+  tup b_comp = *(tup *)b;
+
+  if (a_comp.idx == b_comp.idx) {
+    return a_comp.id < b_comp.id;
+  }
+  return a_comp.idx < b_comp.idx;
 }
