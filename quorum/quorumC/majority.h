@@ -18,6 +18,7 @@ typedef struct {
 
 char *DescribeC(void *c, void *l);
 
-bool compare(const tup *a, const tup *b)
+int compare_by_index(const void *a, const void *b);
+int compare_by_id(const void *a, const void *b);
 
 #endif

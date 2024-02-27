@@ -12,7 +12,7 @@ char *DescribeC(void *c, void *l) {
   }
 
   // Sort by index
-  qsort(info, n, sizeof(tup), compare);
+  qsort(info, n, sizeof(tup), compare_by_index);
 
   // Populate .bar.
   for (int i = 0; i < n; ++i) {
@@ -22,7 +22,7 @@ char *DescribeC(void *c, void *l) {
   }
 
   // Sort by ID.
-  // TODO: Sort
+  qsort(info, n, sizeof(tup), compare_by_id);
 
   char *buf;
   buf = malloc(1000);
@@ -41,7 +41,7 @@ char *DescribeC(void *c, void *l) {
   return buf;
 }
 
-int compare(const void *a, const void *b) {
+int compare_by_index(const void *a, const void *b) {
   tup a_comp = *(tup *)a;
   tup b_comp = *(tup *)b;
 
@@ -49,4 +49,11 @@ int compare(const void *a, const void *b) {
     return a_comp.id < b_comp.id;
   }
   return a_comp.idx < b_comp.idx;
+}
+
+int compare_by_id(const void *a, const void *b) {
+  tup a_comp = *(tup *)a;
+  tup b_comp = *(tup *)b;
+
+  return a_comp.id < b_comp.id;
 }
