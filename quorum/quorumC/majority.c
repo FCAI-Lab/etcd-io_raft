@@ -7,8 +7,13 @@ char *DescribeC(void *c, void *l) {
 
   int n = MajorityConfigLength(c); // Admmited
   tup *info = malloc(n * sizeof(tup));
+  uint64_t *ids = MajorityConfigRange(c); // Admmited
   for (int i = 0; i < n; ++i) {
-    // TODO: AckedIndex
+    u_int64_t id = ids[i];
+    uint64_t idx;
+    void *ok;
+    AckedIndexC(l, id, &idx, &ok); // Admmited
+    info[i] = (tup){id, idx, *(bool *)ok, 0};
   }
 
   // Sort by index

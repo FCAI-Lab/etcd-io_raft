@@ -14,18 +14,19 @@
 
 package quorum
 
-/*
-#cgo LDFLAGS: -L./quorumC -lquorum
-#include "quorumC/majority.h"
-*/
-
 import (
-	"C"
 	"fmt"
 	"math"
 	"sort"
 	"strings"
+	"unsafe"
 )
+
+/*
+#cgo LDFLAGS: -L./quorumC -lquorum
+#include "quorumC/majority.h"
+*/
+import "C"
 
 // MajorityConfig is a set of IDs that uses majority quorums to make decisions.
 type MajorityConfig map[uint64]struct{}
@@ -213,6 +214,22 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 }
 
 //export MajorityConfigLength
-func MajorityConfigLength(c MajorityConfig) int {
-	return len(c)
+func MajorityConfigLength(c MajorityConfig) C.int {
+	return C.int(len(c))
+}
+
+//export MajorityConfigRange
+func MajorityConfigRange(c MajorityConfig) *C.uint64_t {
+	sl := make([]uint64, 0, len(c))
+	for id := range c {
+		sl = append(sl, id)
+	}
+	return (*C.uint64_t)(&sl[0])
+}
+
+//export AckedIndexC
+func AckedIndexC(l unsafe.Pointer, id C.uint64_t, idx *C.uint64_t, ok *unsafe.Pointer) {
+	idx_go, ok_go := (*(*mapAckIndexer)(l)).AckedIndex(uint64(id))
+	*idx = C.uint64_t(idx_go)
+	*ok = unsafe.Pointer(&ok_go)
 }
