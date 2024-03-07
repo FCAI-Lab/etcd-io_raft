@@ -9,7 +9,7 @@ char *DescribeC(void *c, void *l) {
   tup *info = malloc(n * sizeof(tup));
   uint64_t *ids = MajorityConfigRange(c); // Admmited
   for (int i = 0; i < n; ++i) {
-    u_int64_t id = ids[i];
+    uint64_t id = ids[i];
     uint64_t idx;
     void *ok;
     AckedIndexC(l, id, &idx, &ok); // Admmited
@@ -41,7 +41,8 @@ char *DescribeC(void *c, void *l) {
     } else {
       sprintf(buf, "%*s>%*s", bar, "x", n - bar, " ");
     }
-    sprintf(buf, " %5d    (id=%d)\n", info[i].idx, info[i].id);
+    sprintf(buf, " %5" PRIu64 "    (id=%" PRIu64 ")\n", info[i].idx,
+            info[i].id);
   }
   return buf;
 }

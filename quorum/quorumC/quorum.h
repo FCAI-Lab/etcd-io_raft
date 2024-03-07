@@ -7,6 +7,4 @@
 
 typedef uint64_t Index;
 
-const char *index_to_string(uint64_t i);
-
 #endif
