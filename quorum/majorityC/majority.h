@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "quorum.h"
+#include "../quorumC/quorum.h"
 
 typedef struct {
   uint64_t id;

@@ -23,8 +23,8 @@ import (
 )
 
 /*
-#cgo LDFLAGS: -L./quorumC -lquorum
-#include "quorumC/majority.h"
+#cgo LDFLAGS: -L./majorityC -lmajority
+#include "majorityC/majority.h"
 */
 import "C"
 
