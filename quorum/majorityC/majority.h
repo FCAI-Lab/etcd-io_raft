@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#include "../_obj/_cgo_export.h"
 #include "../quorumC/quorum.h"
 
 typedef struct {

@@ -16,7 +16,7 @@ package quorum
 
 /*
 #cgo LDFLAGS: -L. -lmajority
-#include "majorityC/majority.h"
+#include "./majorityC/majority.h"
 */
 import "C"
 
