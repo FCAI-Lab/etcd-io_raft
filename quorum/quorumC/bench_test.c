@@ -20,6 +20,13 @@ void cBenchmarkMajorityConfig_CommittedIndex(int b_N, int n) {
         vector_add(&c.v, &_majorityConfig_content);
         vector_add(&l.v, &_mapAckIndexer_content);
     }
+
+    for (int i = 0; i < b_N; i++){
+        CommittedIndex(c, l);
+    }
+
+    vector_free(&c.v);
+    vector_free(&l.v);
 }
 
 uint64_t majorityConfigId(size_t index) {

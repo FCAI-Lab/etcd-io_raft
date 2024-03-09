@@ -44,3 +44,27 @@ void cinsertionSort(void* p, int size) {
 		}
 	}
 }
+
+Index CommittedIndex(MajorityConfig c, mapAckIndexer l) {
+	size_t n = vector_total(&c.v);
+	if (n == 0) {
+		return UINT64_MAX;
+	}
+
+	uint64_t* srt = (uint64_t*)calloc(n, sizeof(uint64_t));
+
+	size_t i = n - 1;
+	for(int j = 0; j < n; j++){
+		MajorityConfig_content* MajorityConfig = (MajorityConfig_content*) vector_get(&c.v, i);
+		Index* idx = AckedIndex(&l, MajorityConfig->id);
+		if(idx != NULL) {
+			srt[i] = *idx;
+			i--;
+		}
+	}
+
+	cinsertionSort(srt, n);
+
+	uint64_t pos = n - (n/2 + 1);
+	return (Index)srt[pos];
+}

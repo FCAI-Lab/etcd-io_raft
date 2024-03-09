@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <limits.h>
 #include <malloc.h>
 #include "vector.h"
 #include "quorum.h"
@@ -26,3 +25,6 @@ const char* cMajorityConfig(void* p, int size);
 void cSlice(void* p, int size);
 
 void cinsertionSort(void* p, int size);
+
+Index CommittedIndex(MajorityConfig, mapAckIndexer);
+
