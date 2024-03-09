@@ -1,15 +1,9 @@
 #include "bench_test.h"
-#include "vector.h"
-#include "majority.h"
-#include "quorum.h"
-#include <stdio.h>
-#include <limits.h>
 
 MajorityConfig c;
 mapAckIndexer l;
 
 void cBenchmarkMajorityConfig_CommittedIndex(int b_N, int n) {
-    
     vector_init(&c.v, sizeof(MajorityConfig_content));
     vector_init(&l.v, sizeof(mapAckIndexer_content));
 

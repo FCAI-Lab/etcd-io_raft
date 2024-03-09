@@ -25,12 +25,7 @@ func goBenchmarkMajorityConfig_CommittedIndex(b *testing.B, n int) {
 
 	C.majorityConfigmapAckIndexerFree()
 
-	// for i := uint64(0); i < uint64(n); i++ {
-	// 	c[i+1] = struct{}{}
-	// 	l[i+1] = Index(rand.Int63n(math.MaxInt64))
-	// }
-
 	for i := 0; i < b.N; i++ {
-		_ = c.CommittedIndex(l)
+		_ = c.bench_testCommittedIndex(l)
 	}
 }

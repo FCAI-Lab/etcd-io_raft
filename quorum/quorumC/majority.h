@@ -4,7 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <limits.h>
+#include <malloc.h>
 #include "vector.h"
+#include "quorum.h"
 
 typedef struct MajorityConfig_content{
     uint64_t id;

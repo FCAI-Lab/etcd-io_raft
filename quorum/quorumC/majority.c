@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
 #include "majority.h"
 
 int compare(const void *a, const void *b){
@@ -37,11 +34,11 @@ void cSlice(void* p, int size) {
 }
 
 void cinsertionSort(void* p, int size) {
-	long long unsigned int* sl = (long long unsigned int*) p;
+	uint64_t* sl = (uint64_t*) p;
     int a = 0, b = size;
     for (int i = a + 1; i < b; i++) {
 		for (int j = i; j > a && sl[j] < sl[j-1]; j--) {
-			long long unsigned int tmp = sl[j];
+			uint64_t tmp = sl[j];
 			sl[j] = sl[j-1];
 			sl[j-1] = tmp;
 		}

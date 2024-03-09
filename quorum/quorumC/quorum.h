@@ -18,3 +18,5 @@ typedef struct mapAckIndexer_content{
 typedef struct mapAckIndexer{
     vector v;
 } mapAckIndexer;
+
+Index* AckedIndex(void*, uint64_t);
