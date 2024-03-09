@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "majority.h"
 
 int compare(const void *a, const void *b){
 	return(*(long long unsigned int*)a - *(long long unsigned int*)b);

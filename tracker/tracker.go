@@ -25,12 +25,12 @@ import (
 
 // Config reflects the configuration tracked in a ProgressTracker.
 type Config struct {
-	Voters quorum.JointConfig
+	Voters quorum.JointConfig	// X
 	// AutoLeave is true if the configuration is joint and a transition to the
 	// incoming configuration should be carried out automatically by Raft when
 	// this is possible. If false, the configuration will be joint until the
 	// application initiates the transition manually.
-	AutoLeave bool
+	AutoLeave bool				// O
 	// Learners is a set of IDs corresponding to the learners active in the
 	// current configuration.
 	//
@@ -39,7 +39,7 @@ type Config struct {
 	// learner it can't be in either half of the joint config. This invariant
 	// simplifies the implementation since it allows peers to have clarity about
 	// its current role without taking into account joint consensus.
-	Learners map[uint64]struct{}
+	Learners map[uint64]struct{}	// O
 	// When we turn a voter into a learner during a joint consensus transition,
 	// we cannot add the learner directly when entering the joint state. This is
 	// because this would violate the invariant that the intersection of
@@ -74,7 +74,7 @@ type Config struct {
 	// also a voter in the joint config. In this case, the learner is added
 	// right away when entering the joint configuration, so that it is caught up
 	// as soon as possible.
-	LearnersNext map[uint64]struct{}
+	LearnersNext map[uint64]struct{}	// X
 }
 
 func (c Config) String() string {

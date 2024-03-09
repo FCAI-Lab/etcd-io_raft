@@ -23,8 +23,8 @@ import (
 )
 
 /*
-#cgo LDFLAGS: -L./majorityC -lmajority
-#include "majorityC/majority.h"
+#cgo LDFLAGS: -L./quorumC -lmajority
+#include "quorumC/majority.h"
 */
 import "C"
 
@@ -136,6 +136,8 @@ func insertionSort(arr []uint64) {
 
 // CommittedIndex computes the committed index from those supplied via the
 // provided AckedIndexer (for the active config).
+// Majority Config c : id[i + 1], value[struct{}{}]
+// AckedIndexer l : id[i + 1] value[Index(rand.Int63n(math.MaxInt64))]
 func (c MajorityConfig) CommittedIndex(l AckedIndexer) Index {
 	n := len(c)
 	if n == 0 {

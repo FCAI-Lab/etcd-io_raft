@@ -1,10 +1,18 @@
 //quorum.h
-#ifndef _MAJORITY_H
-#define _MAJORITY_H
+#pragma once
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include "vector.h"
+
+typedef struct MajorityConfig_content{
+    uint64_t id;
+} MajorityConfig_content;
+
+typedef struct MajorityConfig {
+    vector v;
+} MajorityConfig;
 
 int compare(const void *a, const void *b);
 
@@ -15,5 +23,3 @@ const char* cMajorityConfig(void* p, int size);
 void cSlice(void* p, int size);
 
 void cinsertionSort(void* p, int size);
-
-#endif
