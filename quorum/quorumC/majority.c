@@ -52,11 +52,14 @@ Index CommittedIndex(MajorityConfig c, mapAckIndexer l) {
 	}
 
 	uint64_t* srt = (uint64_t*)calloc(n, sizeof(uint64_t));
+	for(size_t i = 0; i < n; i++){
+		srt[i] = 0;
+	}
 
 	size_t i = n - 1;
 	for(int j = 0; j < n; j++){
-		MajorityConfig_content* MajorityConfig = (MajorityConfig_content*) vector_get(&c.v, i);
-		Index* idx = AckedIndex(&l, MajorityConfig->id);
+		MajorityConfig_content* MajorityConfig = (MajorityConfig_content*) vector_get(&c.v, j);
+		Index* idx = AckedIndex(&l, (*MajorityConfig).id);
 		if(idx != NULL) {
 			srt[i] = *idx;
 			i--;

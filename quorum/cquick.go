@@ -14,12 +14,23 @@
 
 package quorum
 
+/*
+#cgo LDFLAGS: -L./quorumC -lmajority
+#include "quorumC/majority.h"
+#cgo LDFLAGS: -L./quorumC -lvector
+#include "quorumC/vector.h"
+#cgo LDFLAGS: -L./quorumC -lquorum
+#include "quorumC/quorum.h"
+*/
+import "C"
+
 import (
 	"math"
 	"math/rand"
 	"reflect"
 	"testing"
 	"testing/quick"
+	"unsafe"
 )
 
 // TestQuick uses quickcheck to heuristically assert that the main
@@ -34,9 +45,23 @@ func goTestQuick(t *testing.T) {
 		fn1 := func(c memberMap, l idxMap) uint64 {
 			// Start Here
 			// TODO : need go map convert to c vector
+			var _c C.MajorityConfig
+			var __c C.MajorityConfig_content
+			var _l C.mapAckIndexer
+			var __l C.mapAckIndexer_content
+			C.vector_init(&_c.v, C.size_t(unsafe.Sizeof(__c)))
+			C.vector_init(&_l.v, C.size_t(unsafe.Sizeof(__l)))
 
-			// return C.uint64_t(CommitedIndex(c, l));
-			return uint64(MajorityConfig(c).CommittedIndex(mapAckIndexer(l)))
+			for id := range c {
+				__c.id = C.uint64_t(id)
+				C.vector_add(&_c.v, unsafe.Pointer(&__c))
+			}
+			for id, idx := range l {
+				__l.id = C.uint64_t(id)
+				__l.idx = C.uint64_t(idx)
+				C.vector_add(&_l.v, unsafe.Pointer(&__l))
+			}
+			return uint64((C.CommittedIndex(_c, _l)))
 			// End
 		}
 		fn2 := func(c memberMap, l idxMap) uint64 {
