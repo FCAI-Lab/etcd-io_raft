@@ -21,6 +21,8 @@ package quorum
 #include "quorumC/vector.h"
 #cgo LDFLAGS: -L./quorumC -lquorum
 #include "quorumC/quorum.h"
+#cgo LDFLAGS: -L./quorumC -lquick_test
+#include "quorumC/quick_test.h"
 */
 import "C"
 
@@ -43,8 +45,6 @@ func goTestQuick(t *testing.T) {
 
 	t.Run("majority_commit", func(t *testing.T) {
 		fn1 := func(c memberMap, l idxMap) uint64 {
-			// Start Here
-			// TODO : need go map convert to c vector
 			var _c C.MajorityConfig
 			var __c C.MajorityConfig_content
 			var _l C.mapAckIndexer
@@ -62,12 +62,27 @@ func goTestQuick(t *testing.T) {
 				C.vector_add(&_l.v, unsafe.Pointer(&__l))
 			}
 			return uint64((C.CommittedIndex(_c, _l)))
-			// End
 		}
 		fn2 := func(c memberMap, l idxMap) uint64 {
 			// Start Here
-			return uint64(alternativeMajorityCommittedIndex(MajorityConfig(c), mapAckIndexer(l)))
+			var _c C.MajorityConfig
+			var __c C.MajorityConfig_content
+			var _l C.mapAckIndexer
+			var __l C.mapAckIndexer_content
+			C.vector_init(&_c.v, C.size_t(unsafe.Sizeof(__c)))
+			C.vector_init(&_l.v, C.size_t(unsafe.Sizeof(__l)))
+			for id := range c {
+				__c.id = C.uint64_t(id)
+				C.vector_add(&_c.v, unsafe.Pointer(&__c))
+			}
+			for id, idx := range l {
+				__l.id = C.uint64_t(id)
+				__l.idx = C.uint64_t(idx)
+				C.vector_add(&_l.v, unsafe.Pointer(&__l))
+			}
+			return uint64(C.alternativeMajorityCommittedIndex(_c, _l))
 			// End
+			//return uint64(alternativeMajorityCommittedIndex(MajorityConfig(c), mapAckIndexer(l)))
 		}
 		if err := quick.CheckEqual(fn1, fn2, cfg); err != nil {
 			t.Fatal(err)

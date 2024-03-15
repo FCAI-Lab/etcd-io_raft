@@ -168,11 +168,6 @@ func (c MajorityConfig) CommittedIndex(l AckedIndexer) Index {
 		// the left after sorting below anyway).
 		i := n - 1
 		for id := range c {
-			// if idx := C.AckedIndex(&l, id); idx != nil {
-			// 	srt[i] = uint64(*idx)
-			// 	i--
-			// }
-
 			if idx, ok := l.AckedIndex(id); ok {
 				srt[i] = uint64(idx)
 				i--

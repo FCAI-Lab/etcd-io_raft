@@ -3,6 +3,7 @@
         "time.h": "c",
         "bench_test.h": "c",
         "stdlib.h": "c",
-        "quorum.h": "c"
+        "quorum.h": "c",
+        "string_view": "c"
     }
 }
