@@ -14,7 +14,7 @@ typedef struct {
   int bar;
 } tup;
 
-char *DescribeC(void *c, void *l);
+char *DescribeC(int c_len, uint64_t *c_range, void *l);
 
 int compare_by_index(const void *a, const void *b);
 int compare_by_id(const void *a, const void *b);

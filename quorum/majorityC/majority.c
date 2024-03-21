@@ -1,19 +1,27 @@
 #include "majority.h"
 
-char *DescribeC(void *c, void *l) {
-  if (MajorityConfigLength(c) == 0) { // Admmited
+// l 대신 미리 구현된 AckedIndexC를 사용해야 합니다.
+char *DescribeC(int c_len, uint64_t *c_range, void *l) {
+  if (c_len == 0) {
     return "<empty majority quorum>";
   }
 
-  int n = MajorityConfigLength(c); // Admmited
+  // Below, populate .bar so that the i-th largest commit index has bar i (we
+  // plot this as sort of a progress bar). The actual code is a bit more
+  // complicated and also makes sure that equal index => equal bar.
+
+  int n = c_len;
   tup *info = malloc(n * sizeof(tup));
-  uint64_t *ids = MajorityConfigRange(c); // Admmited
+  uint64_t *ids = c_range;
   for (int i = 0; i < n; ++i) {
+    // 원본에서 MajorityConfig은 map이므로 key를 순회합니다.
     uint64_t id = ids[i];
+
     uint64_t idx;
-    void *ok;
+    bool ok;
     AckedIndexC(l, id, &idx, &ok); // Admmited
-    info[i] = (tup){id, idx, *(bool *)ok, 0};
+
+    info[i] = (tup){id, idx, ok, 0};
   }
 
   // Sort by index
@@ -21,6 +29,7 @@ char *DescribeC(void *c, void *l) {
 
   // Populate .bar.
   for (int i = 0; i < n; ++i) {
+    // 원본에서 info는 slice이므로 index를 순회합니다.
     if (i > 0 && info[i - 1].idx < info[i].idx) {
       info[i].bar = i;
     }
@@ -30,11 +39,13 @@ char *DescribeC(void *c, void *l) {
   qsort(info, n, sizeof(tup), compare_by_id);
 
   char *buf;
-  buf = malloc(1000);
+  buf = malloc(1000); // 좀 더 최적의 Size로 할당해야 합니다.
 
   // Print.
+  // 안정성을 위해 snprintf를 사용해야 합니다.
   sprintf(buf, "%*s    idx\n", n, " ");
   for (int i = 0; i < n; ++i) {
+    // 원본에서 info는 slice이므로 index를 순회합니다.
     int bar = info[i].bar;
     if (!info[i].ok) {
       sprintf(buf, "?%*s", n, " ");
