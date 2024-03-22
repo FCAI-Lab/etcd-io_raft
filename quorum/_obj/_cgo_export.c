@@ -20,55 +20,17 @@ extern char* _cgo_topofstack(void);
 
 #define _cgo_msan_write(addr, sz)
 
-extern void _cgoexp_ddee60cebf0e_MajorityConfigLength(void *);
+extern void _cgoexp_c6cfbd27125d_AckedIndexC(void *);
 
 CGO_NO_SANITIZE_THREAD
-int MajorityConfigLength(GoMap c)
-{
-	size_t _cgo_ctxt = _cgo_wait_runtime_init_done();
-	typedef struct {
-		GoMap p0;
-		int r0;
-	} __attribute__((__packed__)) _cgo_argtype;
-	static _cgo_argtype _cgo_zero;
-	_cgo_argtype _cgo_a = _cgo_zero;
-	_cgo_a.p0 = c;
-	_cgo_tsan_release();
-	crosscall2(_cgoexp_ddee60cebf0e_MajorityConfigLength, &_cgo_a, 12, _cgo_ctxt);
-	_cgo_tsan_acquire();
-	_cgo_release_context(_cgo_ctxt);
-	return _cgo_a.r0;
-}
-extern void _cgoexp_ddee60cebf0e_MajorityConfigRange(void *);
-
-CGO_NO_SANITIZE_THREAD
-uint64_t* MajorityConfigRange(GoMap c)
-{
-	size_t _cgo_ctxt = _cgo_wait_runtime_init_done();
-	typedef struct {
-		GoMap p0;
-		uint64_t* r0;
-	} __attribute__((__packed__)) _cgo_argtype;
-	static _cgo_argtype _cgo_zero;
-	_cgo_argtype _cgo_a = _cgo_zero;
-	_cgo_a.p0 = c;
-	_cgo_tsan_release();
-	crosscall2(_cgoexp_ddee60cebf0e_MajorityConfigRange, &_cgo_a, 16, _cgo_ctxt);
-	_cgo_tsan_acquire();
-	_cgo_release_context(_cgo_ctxt);
-	return _cgo_a.r0;
-}
-extern void _cgoexp_ddee60cebf0e_AckedIndexC(void *);
-
-CGO_NO_SANITIZE_THREAD
-void AckedIndexC(void* l, uint64_t id, uint64_t* idx, void** ok)
+void AckedIndexC(void* l, uint64_t id, uint64_t* idx, void* ok)
 {
 	size_t _cgo_ctxt = _cgo_wait_runtime_init_done();
 	typedef struct {
 		void* p0;
 		uint64_t p1;
 		uint64_t* p2;
-		void** p3;
+		void* p3;
 	} __attribute__((__packed__)) _cgo_argtype;
 	static _cgo_argtype _cgo_zero;
 	_cgo_argtype _cgo_a = _cgo_zero;
@@ -77,7 +39,7 @@ void AckedIndexC(void* l, uint64_t id, uint64_t* idx, void** ok)
 	_cgo_a.p2 = idx;
 	_cgo_a.p3 = ok;
 	_cgo_tsan_release();
-	crosscall2(_cgoexp_ddee60cebf0e_AckedIndexC, &_cgo_a, 32, _cgo_ctxt);
+	crosscall2(_cgoexp_c6cfbd27125d_AckedIndexC, &_cgo_a, 32, _cgo_ctxt);
 	_cgo_tsan_acquire();
 	_cgo_release_context(_cgo_ctxt);
 }

@@ -18,8 +18,8 @@
 package quorum
 
 /*
-#cgo LDFLAGS: -L. -lquorum
-#include "majorityC/majority.h"
+#cgo LDFLAGS: -L. -lmajority
+#include "./majorityC/majority.h"
 */
 import _ "unsafe"
 
@@ -55,7 +55,16 @@ func (c MajorityConfig) String() string {
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
 func (c MajorityConfig) Describe(l AckedIndexer) string {
-	return ( /*line :55:9*/_Cfunc_GoString /*line :55:18*/)(func() *_Ctype_char{ _cgoBase0 := /*line :55:47*/&c; _cgo0 := /*line :55:32*/unsafe.Pointer(_cgoBase0); _cgoBase1 := /*line :55:67*/&l; _cgo1 := /*line :55:52*/unsafe.Pointer(_cgoBase1); _cgoCheckPointer(_cgoBase0, 0 == 0); _cgoCheckPointer(_cgoBase1, 0 == 0); return /*line :55:71*/_Cfunc_DescribeC(_cgo0, _cgo1); }())
+	c_len :=  /*line :55:11*/_Ctype_int /*line :55:16*/(len(c))
+	c_keys := make([]uint64, len(c))
+	i := 0
+	for k := range c {
+		c_keys[i] = k
+		i++
+	}
+	c_range := unsafe.Pointer(&c_keys)
+
+	return ( /*line :64:9*/_Cfunc_GoString /*line :64:18*/)(c_len, c_range, unsafe.Pointer(&l))
 }
 
 // Slice returns the MajorityConfig as a sorted slice.
@@ -162,23 +171,9 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 	return VoteLost
 }
 
-//export MajorityConfigLength
-func MajorityConfigLength(c MajorityConfig)  /*line :163:45*/_Ctype_int /*line :163:50*/ {
-	return  /*line :164:9*/_Ctype_int /*line :164:14*/(len(c))
-}
-
-//export MajorityConfigRange
-func MajorityConfigRange(c MajorityConfig) * /*line :168:45*/_Ctype_uint64_t /*line :168:55*/ {
-	sl := make([]uint64, 0, len(c))
-	for id := range c {
-		sl = append(sl, id)
-	}
-	return (* /*line :173:11*/_Ctype_uint64_t /*line :173:21*/)(&sl[0])
-}
-
 //export AckedIndexC
-func AckedIndexC(l unsafe.Pointer, id  /*line :177:39*/_Ctype_uint64_t /*line :177:49*/, idx * /*line :177:56*/_Ctype_uint64_t /*line :177:66*/, ok *unsafe.Pointer) {
+func AckedIndexC(l unsafe.Pointer, id  /*line :172:39*/_Ctype_uint64_t /*line :172:49*/, idx * /*line :172:56*/_Ctype_uint64_t /*line :172:66*/, ok unsafe.Pointer) {
 	idx_go, ok_go := (*(*mapAckIndexer)(l)).AckedIndex(uint64(id))
-	*idx =  /*line :179:9*/_Ctype_uint64_t /*line :179:19*/(idx_go)
-	*ok = unsafe.Pointer(&ok_go)
+	*idx =  /*line :174:9*/_Ctype_uint64_t /*line :174:19*/(idx_go)
+	ok = unsafe.Pointer(&ok_go)
 }

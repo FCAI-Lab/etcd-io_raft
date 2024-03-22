@@ -24,7 +24,7 @@ static const char *_GoStringPtr(_GoString_ s) { return s.p; }
 #line 17 "/Users/rememberiom/Desktop/raft/quorum/majority.go"
 
 
-#include "majorityC/majority.h"
+#include "./majorityC/majority.h"
 
 #line 1 "cgo-generated-wrapper"
 
@@ -71,23 +71,4 @@ extern char* _cgo_topofstack(void);
 
 
 #define _cgo_msan_write(addr, sz)
-
-CGO_NO_SANITIZE_THREAD
-void
-_cgo_ddee60cebf0e_Cfunc_DescribeC(void *v)
-{
-	struct {
-		void* p0;
-		void* p1;
-		char* r;
-	} __attribute__((__packed__)) *_cgo_a = v;
-	char *_cgo_stktop = _cgo_topofstack();
-	__typeof__(_cgo_a->r) _cgo_r;
-	_cgo_tsan_acquire();
-	_cgo_r = (__typeof__(_cgo_a->r)) DescribeC(_cgo_a->p0, _cgo_a->p1);
-	_cgo_tsan_release();
-	_cgo_a = (void*)((char*)_cgo_a + (_cgo_topofstack() - _cgo_stktop));
-	_cgo_a->r = _cgo_r;
-	_cgo_msan_write(&_cgo_a->r, sizeof(_cgo_a->r));
-}
 

@@ -8,6 +8,4 @@ void _cgo_allocate(void *a __attribute__((unused)), int c __attribute__((unused)
 void _cgo_panic(void *a __attribute__((unused)), int c __attribute__((unused))) { }
 void _cgo_reginit(void) { }
 #line 1 "cgo-generated-wrappers"
-void _cgoexp_ddee60cebf0e_MajorityConfigLength(void* p){}
-void _cgoexp_ddee60cebf0e_MajorityConfigRange(void* p){}
-void _cgoexp_ddee60cebf0e_AckedIndexC(void* p){}
+void _cgoexp_c6cfbd27125d_AckedIndexC(void* p){}

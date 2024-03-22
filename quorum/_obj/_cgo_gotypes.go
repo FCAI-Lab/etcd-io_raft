@@ -47,20 +47,6 @@ func _cgoCheckPointer(interface{}, interface{})
 //go:noescape
 func _cgoCheckResult(interface{})
 
-//go:cgo_import_static _cgo_ddee60cebf0e_Cfunc_DescribeC
-//go:linkname __cgofn__cgo_ddee60cebf0e_Cfunc_DescribeC _cgo_ddee60cebf0e_Cfunc_DescribeC
-var __cgofn__cgo_ddee60cebf0e_Cfunc_DescribeC byte
-var _cgo_ddee60cebf0e_Cfunc_DescribeC = unsafe.Pointer(&__cgofn__cgo_ddee60cebf0e_Cfunc_DescribeC)
-
-//go:cgo_unsafe_args
-func _Cfunc_DescribeC(p0 unsafe.Pointer, p1 unsafe.Pointer) (r1 *_Ctype_char) {
-	_cgo_runtime_cgocall(_cgo_ddee60cebf0e_Cfunc_DescribeC, uintptr(unsafe.Pointer(&p0)))
-	if _Cgo_always_false {
-		_Cgo_use(p0)
-		_Cgo_use(p1)
-	}
-	return
-}
 
 //go:linkname _cgo_runtime_gostring runtime.gostring
 func _cgo_runtime_gostring(*_Ctype_char) string
@@ -69,33 +55,14 @@ func _cgo_runtime_gostring(*_Ctype_char) string
 func _Cfunc_GoString(p *_Ctype_char) string {
 	return _cgo_runtime_gostring(p)
 }
-//go:cgo_export_dynamic MajorityConfigLength
-//go:linkname _cgoexp_ddee60cebf0e_MajorityConfigLength _cgoexp_ddee60cebf0e_MajorityConfigLength
-//go:cgo_export_static _cgoexp_ddee60cebf0e_MajorityConfigLength
-func _cgoexp_ddee60cebf0e_MajorityConfigLength(a *struct {
-		p0 MajorityConfig
-		r0 _Ctype_int
-	}) {
-	a.r0 = MajorityConfigLength(a.p0)
-}
-//go:cgo_export_dynamic MajorityConfigRange
-//go:linkname _cgoexp_ddee60cebf0e_MajorityConfigRange _cgoexp_ddee60cebf0e_MajorityConfigRange
-//go:cgo_export_static _cgoexp_ddee60cebf0e_MajorityConfigRange
-func _cgoexp_ddee60cebf0e_MajorityConfigRange(a *struct {
-		p0 MajorityConfig
-		r0 *_Ctype_uint64_t
-	}) {
-	a.r0 = MajorityConfigRange(a.p0)
-	_cgoCheckResult(a.r0)
-}
 //go:cgo_export_dynamic AckedIndexC
-//go:linkname _cgoexp_ddee60cebf0e_AckedIndexC _cgoexp_ddee60cebf0e_AckedIndexC
-//go:cgo_export_static _cgoexp_ddee60cebf0e_AckedIndexC
-func _cgoexp_ddee60cebf0e_AckedIndexC(a *struct {
+//go:linkname _cgoexp_c6cfbd27125d_AckedIndexC _cgoexp_c6cfbd27125d_AckedIndexC
+//go:cgo_export_static _cgoexp_c6cfbd27125d_AckedIndexC
+func _cgoexp_c6cfbd27125d_AckedIndexC(a *struct {
 		p0 unsafe.Pointer
 		p1 _Ctype_uint64_t
 		p2 *_Ctype_uint64_t
-		p3 *unsafe.Pointer
+		p3 unsafe.Pointer
 	}) {
 	AckedIndexC(a.p0, a.p1, a.p2, a.p3)
 }

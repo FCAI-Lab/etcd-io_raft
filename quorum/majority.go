@@ -15,7 +15,7 @@
 package quorum
 
 /*
-#cgo LDFLAGS: -L. -lmajority
+#cgo LDFLAGS: -LmajorityC -lmajority
 #include "./majorityC/majority.h"
 */
 import "C"
@@ -52,7 +52,16 @@ func (c MajorityConfig) String() string {
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
 func (c MajorityConfig) Describe(l AckedIndexer) string {
-	return C.GoString(C.DescribeC(unsafe.Pointer(&c), unsafe.Pointer(&l)))
+	c_len := C.int(len(c))
+	c_keys := make([]uint64, len(c))
+	i := 0
+	for k := range c {
+		c_keys[i] = k
+		i++
+	}
+	c_range := unsafe.Pointer(&c_keys)
+
+	return C.GoString(C.DescribeC(c_len, c_range, unsafe.Pointer(&l)))
 }
 
 // Slice returns the MajorityConfig as a sorted slice.
@@ -159,23 +168,9 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 	return VoteLost
 }
 
-//export MajorityConfigLength
-func MajorityConfigLength(c MajorityConfig) C.int {
-	return C.int(len(c))
-}
-
-//export MajorityConfigRange
-func MajorityConfigRange(c MajorityConfig) *C.uint64_t {
-	sl := make([]uint64, 0, len(c))
-	for id := range c {
-		sl = append(sl, id)
-	}
-	return (*C.uint64_t)(&sl[0])
-}
-
 //export AckedIndexC
-func AckedIndexC(l unsafe.Pointer, id C.uint64_t, idx *C.uint64_t, ok *unsafe.Pointer) {
+func AckedIndexC(l unsafe.Pointer, id C.uint64_t, idx *C.uint64_t, ok unsafe.Pointer) {
 	idx_go, ok_go := (*(*mapAckIndexer)(l)).AckedIndex(uint64(id))
 	*idx = C.uint64_t(idx_go)
-	*ok = unsafe.Pointer(&ok_go)
+	ok = unsafe.Pointer(&ok_go)
 }

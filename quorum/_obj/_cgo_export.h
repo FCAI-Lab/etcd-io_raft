@@ -86,9 +86,7 @@ typedef struct {
 extern "C" {
 #endif
 
-extern int MajorityConfigLength(GoMap c);
-extern uint64_t *MajorityConfigRange(GoMap c);
-extern void AckedIndexC(void *l, uint64_t id, uint64_t *idx, void **ok);
+extern void AckedIndexC(void *l, uint64_t id, uint64_t *idx, void *ok);
 
 #ifdef __cplusplus
 }

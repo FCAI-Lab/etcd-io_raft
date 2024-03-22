@@ -1,7 +1,9 @@
 #ifndef _MAJORITY_H
 #define _MAJORITY_H
 
+#include <inttypes.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "../_obj/_cgo_export.h"
@@ -14,7 +16,7 @@ typedef struct {
   int bar;
 } tup;
 
-char *DescribeC(int c_len, uint64_t *c_range, void *l);
+char *DescribeC(int c_len, void *c_range, void *l);
 
 int compare_by_index(const void *a, const void *b);
 int compare_by_id(const void *a, const void *b);
