@@ -15,8 +15,8 @@
 package quorum
 
 /*
-#cgo LDFLAGS: -LmajorityC -lmajority
-#include "./majorityC/majority.h"
+#cgo LDFLAGS: -LquorumC -lmajority
+#include "./quorumC/majority.h"
 */
 import "C"
 
@@ -166,11 +166,4 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 		return VotePending
 	}
 	return VoteLost
-}
-
-//export AckedIndexC
-func AckedIndexC(l unsafe.Pointer, id C.uint64_t, idx *C.uint64_t, ok unsafe.Pointer) {
-	idx_go, ok_go := (*(*mapAckIndexer)(l)).AckedIndex(uint64(id))
-	*idx = C.uint64_t(idx_go)
-	ok = unsafe.Pointer(&ok_go)
 }

@@ -1,10 +1,7 @@
 #ifndef _MAJORITY_H
 #define _MAJORITY_H
 
-#include <inttypes.h>
 #include <stdbool.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 #include "quorum.h"
 
