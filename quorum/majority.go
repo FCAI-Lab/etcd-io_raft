@@ -52,8 +52,8 @@ func (c MajorityConfig) String() string {
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
 func (c MajorityConfig) Describe(l AckedIndexer) string {
-	c_len := C.int(len(c))
-	c_keys := make([]uint64, len(c))
+	c_len := C.int(len(c))           // c_len 추출
+	c_keys := make([]uint64, len(c)) // c_range 추출
 	i := 0
 	for k := range c {
 		c_keys[i] = k
@@ -61,7 +61,20 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 	}
 	c_range := unsafe.Pointer(&c_keys)
 
-	return C.GoString(C.DescribeC(c_len, c_range, unsafe.Pointer(&l)))
+	// AckedIndexer 추출
+	l_idx := make([]Index, len(c))
+	l_ok := make([]bool, len(c))
+	i = 0
+	for k := range c {
+		idx, ok := l.AckedIndex(k)
+		l_idx[i] = idx
+		l_ok[i] = ok
+		i++
+	}
+	l_range_idx := unsafe.Pointer(&l_idx)
+	l_range_ok := unsafe.Pointer(&l_ok)
+
+	return C.GoString(C.DescribeC(c_len, c_range, l_range_idx, l_range_ok))
 }
 
 // Slice returns the MajorityConfig as a sorted slice.

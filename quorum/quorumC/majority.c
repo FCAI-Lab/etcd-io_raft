@@ -1,7 +1,8 @@
 #include "majority.h"
 
 // l 대신 미리 구현된 AckedIndexC를 사용해야 합니다.
-char *DescribeC(int c_len, void *c_range, void *l) {
+char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
+
   if (c_len == 0) {
     return "<empty majority quorum>";
   }
@@ -13,13 +14,13 @@ char *DescribeC(int c_len, void *c_range, void *l) {
   int n = c_len;
   tup *info = malloc(n * sizeof(tup));
   uint64_t *ids = (uint64_t *)c_range;
+  uint64_t *idxs = (uint64_t *)l_range_idx;
+  bool *oks = (bool *)l_range_ok;
   for (int i = 0; i < n; ++i) {
     // 원본에서 MajorityConfig은 map이므로 key를 순회합니다.
     uint64_t id = ids[i];
-
-    uint64_t idx;
-    bool ok;
-    // AckedIndexC(l, id, &idx, &ok); // Admmited
+    uint64_t idx = idxs[i];
+    bool ok = oks[i];
 
     info[i] = (tup){id, idx, ok, 0};
   }
