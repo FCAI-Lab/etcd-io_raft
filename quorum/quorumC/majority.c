@@ -1,7 +1,7 @@
 #include "majority.h"
 
-// l 대신 미리 구현된 AckedIndexC를 사용해야 합니다.
 char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
+  /*
   if (c_len == 0) {
     return "<empty majority quorum>";
   }
@@ -59,6 +59,9 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   free(info);
 
   return buf;
+  */
+
+  return "<empty majority quorum>";
 }
 
 int compare_by_index(const void *a, const void *b) {
