@@ -2,6 +2,7 @@
 #define _MAJORITY_H
 
 #include <stdbool.h>
+#include <string.h>
 
 #include "quorum.h"
 

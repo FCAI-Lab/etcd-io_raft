@@ -1,7 +1,6 @@
 #include "majority.h"
 
 char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
-  /*
   if (c_len == 0) {
     return "<empty majority quorum>";
   }
@@ -10,7 +9,7 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   // plot this as sort of a progress bar). The actual code is a bit more
   // complicated and also makes sure that equal index => equal bar.
 
-  int n = c_len;
+  int n = c_len - 1;
   tup *info = malloc(n * sizeof(tup));
   uint64_t *ids = (uint64_t *)c_range;
   uint64_t *idxs = (uint64_t *)l_range_idx;
@@ -38,30 +37,35 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   // Sort by ID.
   qsort(info, n, sizeof(tup), compare_by_id);
 
-  char *buf;
-  buf = malloc(1024); // 좀 더 최적의 Size로 할당해야 합니다.
+  char *buf = malloc(1024);
+  buf[0] = '\0';
 
   // Print.
-  // 안정성을 위해 snprintf를 사용해야 합니다.
-  sprintf(buf, "%*s    idx\n", n, " ");
+  char *line = malloc(1024);
+  sprintf(line, "%*s    idx\n", n, " ");
+  strncat(buf, line, 1024);
+
   for (int i = 0; i < n; ++i) {
     // 원본에서 info는 slice이므로 index를 순회합니다.
     int bar = info[i].bar;
     if (!info[i].ok) {
-      sprintf(buf, "?%*s", n, " ");
+      sprintf(line, "?%*s", n, " ");
     } else {
-      sprintf(buf, "%*s>%*s", bar, "x", n - bar, " ");
+      char repeat[bar + 1];
+      memset(repeat, 'x', bar);
+      repeat[bar] = '\0';
+      sprintf(line, "%s>%*s", repeat, n - bar, " ");
     }
-    sprintf(buf, " %5" PRIu64 "    (id=%" PRIu64 ")\n", info[i].idx,
-            info[i].id);
+    strncat(buf, line, 1024);
+
+    sprintf(line, " %5llu    (id=%llu)\n", info[i].idx, info[i].id);
+    strncat(buf, line, 1024);
   }
 
+  free(line);
   free(info);
 
   return buf;
-  */
-
-  return "<empty majority quorum>";
 }
 
 int compare_by_index(const void *a, const void *b) {
@@ -69,17 +73,9 @@ int compare_by_index(const void *a, const void *b) {
   tup b_comp = *(tup *)b;
 
   if (a_comp.idx == b_comp.idx) {
-    if (a_comp.id < b_comp.id) {
-      return -1;
-    } else {
-      return 1;
-    }
+    return a_comp.id < b_comp.id ? -1 : 1;
   } else {
-    if (a_comp.idx < b_comp.idx) {
-      return -1;
-    } else {
-      return 1;
-    }
+    return a_comp.idx < b_comp.idx ? -1 : 1;
   }
 }
 
@@ -87,9 +83,5 @@ int compare_by_id(const void *a, const void *b) {
   tup a_comp = *(tup *)a;
   tup b_comp = *(tup *)b;
 
-  if (a_comp.id < b_comp.id) {
-    return -1;
-  } else {
-    return 1;
-  }
+  return a_comp.id < b_comp.id ? -1 : 1;
 }

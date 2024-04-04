@@ -25,6 +25,7 @@ import (
 	"math"
 	"sort"
 	"strings"
+	"unsafe"
 )
 
 // MajorityConfig is a set of IDs that uses majority quorums to make decisions.
@@ -50,6 +51,7 @@ func (c MajorityConfig) String() string {
 
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
+/*
 func (c MajorityConfig) Describe(l AckedIndexer) string {
 	if len(c) == 0 {
 		return "<empty majority quorum>"
@@ -107,43 +109,31 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 	}
 	return buf.String()
 }
+*/
 
-/*
 func (c MajorityConfig) Describe(l AckedIndexer) string {
 	c_len := C.int(len(c)) // c_len 추출
 	c_len += 1
 
-	// c_range 추출
-	c_keys := make([]uint64, len(c))
-	i := 0
+	// c_range, l_range_idx, l_range_ok 추출
+	var c_keys []uint64
+	var l_idx []Index
+	var l_ok []bool
 	for k := range c {
-		c_keys[i] = k
-		i++
-	}
-	c_range := unsafe.Pointer(&c_keys[0])
-
-	// AckedIndexer 추출
-	l_idx := make([]Index, len(c))
-	l_ok := make([]bool, len(c))
-	i = 0
-	for k := range c {
+		c_keys = append(c_keys, k)
 		idx, ok := l.AckedIndex(k)
-		l_idx[i] = idx
-		l_ok[i] = ok
-		i++
+		l_idx = append(l_idx, idx)
+		l_ok = append(l_ok, ok)
 	}
+	// c_keys, l_idx, l_ok를 C의 void*로 변환
+	c_range := unsafe.Pointer(&c_keys[0])
 	l_range_idx := unsafe.Pointer(&l_idx[0])
 	l_range_ok := unsafe.Pointer(&l_ok[0])
 
 	describe_c_ans := C.GoString(C.DescribeC(c_len, c_range, l_range_idx, l_range_ok))
 
-	C.free(unsafe.Pointer(c_range))
-	C.free(unsafe.Pointer(l_range_idx))
-	C.free(unsafe.Pointer(l_range_ok))
-
 	return describe_c_ans
 }
-*/
 
 // Slice returns the MajorityConfig as a sorted slice.
 func (c MajorityConfig) Slice() []uint64 {
