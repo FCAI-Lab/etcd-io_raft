@@ -9,7 +9,7 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   // plot this as sort of a progress bar). The actual code is a bit more
   // complicated and also makes sure that equal index => equal bar.
 
-  int n = c_len - 1;
+  int n = c_len;
   tup *info = malloc(n * sizeof(tup));
   uint64_t *ids = (uint64_t *)c_range;
   uint64_t *idxs = (uint64_t *)l_range_idx;
