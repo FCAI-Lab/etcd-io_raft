@@ -20,11 +20,19 @@ package quorum
 */
 import "C"
 
+import (
+	"math"
+	"strconv"
+)
+
 // Index is a Raft log position.
 type Index uint64
 
 func (i Index) String() string {
-	return C.GoString(C.index_to_string(C.uint64_t(i)))
+	if i == math.MaxUint64 {
+		return "∞"
+	}
+	return strconv.FormatUint(uint64(i), 10)
 }
 
 // AckedIndexer allows looking up a commit index for a given ID of a voter

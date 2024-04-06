@@ -14,6 +14,12 @@
 
 package quorum
 
+/*
+#cgo LDFLAGS: -LquorumC -lmajority
+#include "./quorumC/majority.h"
+*/
+import "C"
+
 import (
 	"fmt"
 	"math"
@@ -50,6 +56,7 @@ func (c MajorityConfig) String() string {
 
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
+/*
 func (c MajorityConfig) Describe(l AckedIndexer) string {
 	if len(c) == 0 {
 		return "<empty majority quorum>"
@@ -106,6 +113,35 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 		fmt.Fprintf(&buf, " %5d    (id=%d)\n", info[i].idx, info[i].id)
 	}
 	return buf.String()
+}
+*/
+
+func (c MajorityConfig) Describe(l AckedIndexer) string {
+	c_len := C.int(len(c)) // c_len 추출
+
+	// c_range, l_range_idx, l_range_ok 추출
+	var c_keys []uint64
+	var l_idx []Index
+	var l_ok []bool
+	for k := range c {
+		c_keys = append(c_keys, k)
+		idx, ok := l.AckedIndex(k)
+		l_idx = append(l_idx, idx)
+		l_ok = append(l_ok, ok)
+	}
+	// c_keys, l_idx, l_ok를 C의 void*로 변환
+	var c_range unsafe.Pointer
+	var l_range_idx unsafe.Pointer
+	var l_range_ok unsafe.Pointer
+	if len(c) > 0 {
+		c_range = unsafe.Pointer(&c_keys[0])
+		l_range_idx = unsafe.Pointer(&l_idx[0])
+		l_range_ok = unsafe.Pointer(&l_ok[0])
+	}
+
+	describe_c_ans := C.GoString(C.DescribeC(c_len, c_range, l_range_idx, l_range_ok))
+
+	return describe_c_ans
 }
 
 // by chanjun

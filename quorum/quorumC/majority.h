@@ -3,6 +3,8 @@
 
 #include "quorum.h"
 #include "vector.h"
+#include <stdbool.h>
+#include <string.h>
 
 typedef struct MajorityConfig_content {
   uint64_t id;
@@ -11,8 +13,6 @@ typedef struct MajorityConfig_content {
 typedef struct MajorityConfig {
   vector v;
 } MajorityConfig;
-
-int compare(const void *a, const void *b);
 
 // sort slice by ascending & slice -> string
 const char *cMajorityConfig(void *p, int size);
@@ -23,5 +23,18 @@ void cSlice(void *p, int size);
 void cinsertionSort(void *p, int size);
 
 Index CommittedIndex(MajorityConfig, mapAckIndexer);
+
+typedef struct {
+  uint64_t id;
+  Index idx;
+  bool ok;
+  int bar;
+} tup;
+
+char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok);
+
+int compare_by_index(const void *a, const void *b);
+int compare_by_id(const void *a, const void *b);
+int compare(const void *a, const void *b);
 
 #endif
