@@ -7,8 +7,6 @@ import (
 /*
 #cgo LDFLAGS: -L./quorumC -lbench_test
 #include "quorumC/bench_test.h"
-#cgo LDFLAGS: -L./quorumC -lvector
-#include "quorumC/vector.h"
 */
 import "C"
 

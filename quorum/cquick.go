@@ -15,12 +15,8 @@
 package quorum
 
 /*
-#cgo LDFLAGS: -L./quorumC -lmajority
-#include "quorumC/majority.h"
 #cgo LDFLAGS: -L./quorumC -lvector
 #include "quorumC/vector.h"
-#cgo LDFLAGS: -L./quorumC -lquorum
-#include "quorumC/quorum.h"
 #cgo LDFLAGS: -L./quorumC -lquick_test
 #include "quorumC/quick_test.h"
 */

@@ -1,30 +1,27 @@
-//quorum.h
-#pragma once
+#ifndef MAJORITY_H_
+#define MAJORITY_H_
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <malloc.h>
-#include "vector.h"
 #include "quorum.h"
+#include "vector.h"
 
-typedef struct MajorityConfig_content{
-    uint64_t id;
+typedef struct MajorityConfig_content {
+  uint64_t id;
 } MajorityConfig_content;
 
 typedef struct MajorityConfig {
-    vector v;
+  vector v;
 } MajorityConfig;
 
 int compare(const void *a, const void *b);
 
 // sort slice by ascending & slice -> string
-const char* cMajorityConfig(void* p, int size);
+const char *cMajorityConfig(void *p, int size);
 
 // sort.Slice(sl, func(i, j int) bool { return sl[i] < sl[j] }) 의 역활
-void cSlice(void* p, int size);
+void cSlice(void *p, int size);
 
-void cinsertionSort(void* p, int size);
+void cinsertionSort(void *p, int size);
 
 Index CommittedIndex(MajorityConfig, mapAckIndexer);
 
+#endif
