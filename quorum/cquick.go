@@ -57,7 +57,7 @@ func goTestQuick(t *testing.T) {
 				__l.idx = C.uint64_t(idx)
 				C.vector_add(&_l.v, unsafe.Pointer(&__l))
 			}
-			return uint64((C.CommittedIndex(_c, _l)))
+			return uint64((C.cCommittedIndex(_c, _l)))
 		}
 		fn2 := func(c memberMap, l idxMap) uint64 {
 			// Start Here

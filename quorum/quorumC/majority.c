@@ -22,7 +22,7 @@ const char *cMajorityConfig(void *p, int size) {
   return buf;
 }
 
-char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
+char *cDescribe(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   if (c_len == 0) {
     return "<empty majority quorum>";
   }
@@ -37,7 +37,7 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
   uint64_t *idxs = (uint64_t *)l_range_idx;
   bool *oks = (bool *)l_range_ok;
   for (int i = 0; i < n; ++i) {
-    // 원본에서 MajorityConfig은 map이므로 key를 순회합니다.
+    // 원본에서 MajorityConfig은 map이므로 key를 순회
     uint64_t id = ids[i];
     uint64_t idx = idxs[i];
     bool ok = oks[i];
@@ -50,7 +50,7 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
 
   // Populate .bar.
   for (int i = 0; i < n; ++i) {
-    // 원본에서 info는 slice이므로 index를 순회합니다.
+    // 원본에서 info는 slice이므로 index를 순회
     if (i > 0 && info[i - 1].idx < info[i].idx) {
       info[i].bar = i;
     }
@@ -64,23 +64,24 @@ char *DescribeC(int c_len, void *c_range, void *l_range_idx, void *l_range_ok) {
 
   // Print.
   char *line = malloc(1024);
-  sprintf(line, "%*s    idx\n", n, " ");
+  snprintf(line, 1024, "%*s    idx\n", n, " ");
   strncat(buf, line, 1024);
 
   for (int i = 0; i < n; ++i) {
-    // 원본에서 info는 slice이므로 index를 순회합니다.
+    // 원본에서 info는 slice이므로 index를 순회
     int bar = info[i].bar;
     if (!info[i].ok) {
-      sprintf(line, "?%*s", n, " ");
+      snprintf(line, 1024, "?%*s", n, " ");
     } else {
       char repeat[bar + 1];
       memset(repeat, 'x', bar);
       repeat[bar] = '\0';
-      sprintf(line, "%s>%*s", repeat, n - bar, " ");
+      snprintf(line, 1024, "%s>%*s", repeat, n - bar, " ");
     }
     strncat(buf, line, 1024);
 
-    sprintf(line, " %5llu    (id=%llu)\n", info[i].idx, info[i].id);
+    snprintf(line, 1024, " %5" PRIu64 "    (id=%" PRIu64 ")\n", info[i].idx,
+             info[i].id);
     strncat(buf, line, 1024);
   }
 
@@ -109,7 +110,7 @@ void cinsertionSort(void *p, int size) {
   }
 }
 
-Index CommittedIndex(MajorityConfig c, mapAckIndexer l) {
+Index cCommittedIndex(MajorityConfig c, mapAckIndexer l) {
   size_t n = vector_total(&c.v);
   if (n == 0) {
     return UINT64_MAX;
@@ -142,9 +143,9 @@ int compare_by_index(const void *a, const void *b) {
   tup b_comp = *(tup *)b;
 
   if (a_comp.idx == b_comp.idx) {
-    return a_comp.id < b_comp.id ? -1 : 1;
+    return a_comp.id - b_comp.id;
   } else {
-    return a_comp.idx < b_comp.idx ? -1 : 1;
+    return a_comp.idx - b_comp.idx;
   }
 }
 
@@ -152,8 +153,9 @@ int compare_by_id(const void *a, const void *b) {
   tup a_comp = *(tup *)a;
   tup b_comp = *(tup *)b;
 
-  return a_comp.id < b_comp.id ? -1 : 1;
+  return a_comp.id - b_comp.id;
 }
+
 int compare(const void *a, const void *b) {
   return (*(long long unsigned int *)a - *(long long unsigned int *)b);
 }

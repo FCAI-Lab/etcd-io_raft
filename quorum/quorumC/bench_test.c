@@ -20,7 +20,7 @@ void cBenchmarkMajorityConfig_CommittedIndex(int b_N, int n) {
   }
 
   for (int i = 0; i < b_N; i++) {
-    CommittedIndex(c, l);
+    cCommittedIndex(c, l);
   }
 
   vector_free(&c.v);

@@ -4,7 +4,6 @@
 #include "vector.h"
 #include <inttypes.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 typedef uint64_t Index;
 

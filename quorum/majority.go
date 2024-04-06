@@ -21,18 +21,9 @@ package quorum
 import "C"
 
 import (
-	"fmt"
 	"math"
-	"sort"
-	"strings"
 	"unsafe"
 )
-
-/*
-#cgo LDFLAGS: -L./quorumC -lmajority
-#include "quorumC/majority.h"
-*/
-import "C"
 
 // MajorityConfig is a set of IDs that uses majority quorums to make decisions.
 type MajorityConfig map[uint64]struct{}
@@ -56,65 +47,6 @@ func (c MajorityConfig) String() string {
 
 // Describe returns a (multi-line) representation of the commit indexes for the
 // given lookuper.
-/*
-func (c MajorityConfig) Describe(l AckedIndexer) string {
-	if len(c) == 0 {
-		return "<empty majority quorum>"
-	}
-	type tup struct {
-		id  uint64
-		idx Index
-		ok  bool // idx found?
-		bar int  // length of bar displayed for this tup
-	}
-
-	// Below, populate .bar so that the i-th largest commit index has bar i (we
-	// plot this as sort of a progress bar). The actual code is a bit more
-	// complicated and also makes sure that equal index => equal bar.
-
-	n := len(c)
-	info := make([]tup, 0, n)
-	for id := range c {
-		idx, ok := l.AckedIndex(id)
-		info = append(info, tup{id: id, idx: idx, ok: ok})
-	}
-
-	// Sort by index
-	sort.Slice(info, func(i, j int) bool {
-		if info[i].idx == info[j].idx {
-			return info[i].id < info[j].id
-		}
-		return info[i].idx < info[j].idx
-	})
-
-	// Populate .bar.
-	for i := range info {
-		if i > 0 && info[i-1].idx < info[i].idx {
-			info[i].bar = i
-		}
-	}
-
-	// Sort by ID.
-	sort.Slice(info, func(i, j int) bool {
-		return info[i].id < info[j].id
-	})
-
-	var buf strings.Builder
-
-	// Print.
-	fmt.Fprint(&buf, strings.Repeat(" ", n)+"    idx\n")
-	for i := range info {
-		bar := info[i].bar
-		if !info[i].ok {
-			fmt.Fprint(&buf, "?"+strings.Repeat(" ", n))
-		} else {
-			fmt.Fprint(&buf, strings.Repeat("x", bar)+">"+strings.Repeat(" ", n-bar))
-		}
-		fmt.Fprintf(&buf, " %5d    (id=%d)\n", info[i].idx, info[i].id)
-	}
-	return buf.String()
-}
-*/
 
 func (c MajorityConfig) Describe(l AckedIndexer) string {
 	c_len := C.int(len(c)) // c_len 추출
@@ -139,7 +71,7 @@ func (c MajorityConfig) Describe(l AckedIndexer) string {
 		l_range_ok = unsafe.Pointer(&l_ok[0])
 	}
 
-	describe_c_ans := C.GoString(C.DescribeC(c_len, c_range, l_range_idx, l_range_ok))
+	describe_c_ans := C.GoString(C.cDescribe(c_len, c_range, l_range_idx, l_range_ok))
 
 	return describe_c_ans
 }
