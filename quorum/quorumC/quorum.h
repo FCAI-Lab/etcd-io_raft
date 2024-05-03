@@ -21,4 +21,18 @@ typedef struct mapAckIndexer {
 
 Index *AckedIndex(void *, uint64_t);
 
+// VoteResult indicates the outcome of a vote.
+//
+typedef uint8_t VoteResult;
+
+enum {
+  // VotePending indicates that the decision of the vote depends on future
+  // votes, i.e. neither "yes" or "no" has reached quorum yet.
+  VotePending = 1,
+  // VoteLost indicates that the quorum has voted "no".
+  VoteLost,
+  // VoteWon indicates that the quorum has voted "yes".
+  VoteWon
+};
+
 #endif
