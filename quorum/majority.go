@@ -158,6 +158,18 @@ func (c MajorityConfig) CommittedIndex(l AckedIndexer) Index {
 // yes/no has been reached), won (a quorum of yes has been reached), or lost (a
 // quorum of no has been reached).
 func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
+	var cVotes []C.VoteEntry
+	for v_cur, ok_cur := range votes {
+		cVotes = append(cVotes, C.VoteEntry{v: C.uint64_t(v_cur), ok: C.bool(ok_cur)})
+	}
+
+	result := int((*C.VoteEntry)(unsafe.Pointer(&cVotes[0]), C.int(len(c))))
+
+	return result
+}
+
+/*
+func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 	if len(c) == 0 {
 		// By convention, the elections on an empty config win. This comes in
 		// handy with joint quorums because it'll make a half-populated joint
@@ -187,3 +199,4 @@ func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
 	}
 	return VoteLost
 }
+*/

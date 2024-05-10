@@ -20,6 +20,11 @@ typedef struct tup {
   int bar;
 } tup;
 
+typedef struct VoteEntry {
+  uint64_t v;
+  bool ok;
+} VoteEntry;
+
 // sort slice by ascending & slice -> string
 const char *cMajorityConfig(void *p, int size);
 
