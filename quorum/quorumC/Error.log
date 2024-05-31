@@ -1,0 +1,755 @@
+PASSES="unit" ./scripts/test.sh 
+[0;36mStarting at: 2024년 5월 31일 금요일 11시 46분 30초 KST
+[0m[0;36m
+'unit' started at 2024년 5월 31일 금요일 11시 46분 30초 KST
+[0mraft2024/05/31 11:46:32 INFO: found conflict at index 1 [existing term: 1, conflicting term: 4]
+raft2024/05/31 11:46:32 INFO: found conflict at index 2 [existing term: 2, conflicting term: 1]
+raft2024/05/31 11:46:32 INFO: found conflict at index 3 [existing term: 3, conflicting term: 1]
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 1
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 2
+raft2024/05/31 11:46:32 INFO: found conflict at index 3 [existing term: 3, conflicting term: 4]
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 3
+raft2024/05/31 11:46:32 INFO: found conflict at index 2 [existing term: 2, conflicting term: 4]
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 2
+raft2024/05/31 11:46:32 INFO: found conflict at index 1 [existing term: 1, conflicting term: 4]
+raft2024/05/31 11:46:32 entry 1 conflict with committed entry [committed(1)]
+raft2024/05/31 11:46:32 INFO: found conflict at index 2 [existing term: 2, conflicting term: 4]
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 2
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: log [committed=5, applied=3, applying=3, unstable.offset=5, unstable.offsetInProgress=5, len(unstable.Entries)=2] starts to restore snapshot [index: 4, term: 1]
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: log [committed=5, applied=3, applying=3, unstable.offset=5, unstable.offsetInProgress=5, len(unstable.Entries)=2] starts to restore snapshot [index: 4, term: 1]
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 tocommit(4) is out of range [lastIndex(3)]. Was the raft log corrupted, truncated, or lost?
+raft2024/05/31 11:46:32 INFO: entry at (index,term)=(2,1) mismatched with entry at (2,2) in unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 3 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 6 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 5 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 6 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 5 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 5 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at (index,term)=(6,3) mismatched with entry at (6,2) in unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 5 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 compact 1001 is out of bound lastindex(1000)
+raft2024/05/31 11:46:32 slice[201,202) out of bound [101,200]
+raft2024/05/31 11:46:32 slice[202,202) out of bound [101,200]
+raft2024/05/31 11:46:32 INFO: log [committed=100, applied=100, applying=100, unstable.offset=101, unstable.offsetInProgress=101, len(unstable.Entries)=0] starts to restore snapshot [index: 105, term: 1]
+raft2024/05/31 11:46:32 invalid slice 150 > 149
+raft2024/05/31 11:46:32 slice[200,201) out of bound [101,199]
+raft2024/05/31 11:46:32 INFO: entry at index 5 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at (index,term)=(6,1) mismatched with entry at (6,2) in unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 missing from unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at (index,term)=(6,1) mismatched with entry at (6,2) in unstable log; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 matched unstable snapshot; ignoring
+raft2024/05/31 11:46:32 INFO: entry at index 4 matched unstable snapshot; ignoring
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 5
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 4
+raft2024/05/31 11:46:32 INFO: replace the unstable entries from index 5
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 6
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 7
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 6
+raft2024/05/31 11:46:32 INFO: truncate the unstable entries before index 6
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 2 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 2 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 3 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 3 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 2 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 2 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 3 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 3 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 2 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 3 not forwarding to leader 1 at term 1; dropping proposal
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 2 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 2 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 3 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 3 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 2 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 2 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 3 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 3 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 2 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 3 is starting a new election at term 1
+raft2024/05/31 11:46:32 INFO: 3 became candidate at term 2
+raft2024/05/31 11:46:32 INFO: 3 [logterm: 1, index: 1] sent MsgVote request to 1 at term 2
+raft2024/05/31 11:46:32 INFO: 3 [logterm: 1, index: 1] sent MsgVote request to 2 at term 2
+raft2024/05/31 11:46:32 INFO: 3 received MsgVoteResp from 3 at term 2
+raft2024/05/31 11:46:32 INFO: 3 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 [term: 1] received a MsgVote message with higher term from 3 [term: 2]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 2
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 1, index: 1, vote: 0] cast MsgVote for 3 [logterm: 1, index: 1] at term 2
+raft2024/05/31 11:46:32 INFO: 2 [term: 1] received a MsgVote message with higher term from 3 [term: 2]
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 2
+raft2024/05/31 11:46:32 INFO: 2 [logterm: 1, index: 1, vote: 0] cast MsgVote for 3 [logterm: 1, index: 1] at term 2
+raft2024/05/31 11:46:32 INFO: 2 [term: 2] ignored a MsgHeartbeat message with lower term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 3 [term: 2] ignored a MsgHeartbeat message with lower term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 3 received MsgVoteResp from 1 at term 2
+raft2024/05/31 11:46:32 INFO: 3 has received 2 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 3 became leader at term 2
+raft2024/05/31 11:46:32 INFO: 1 no leader at term 2; dropping index reading msg
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:0 State:StateCandidate
+HardState Term:1 Vote:1 Commit:0
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2)
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=()
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=()
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 1
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 2
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 2
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 2
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 2
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=()
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [], term: 1, commit: 1, applied: 0, lastindex: 2, lastterm: 1]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2], term: 1, commit: 3, applied: 2, lastindex: 3, lastterm: 1]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:0 State:StateCandidate
+HardState Term:1 Vote:1 Commit:0
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:1 State:StateLeader
+Entries:
+1/1 EntryNormal ""
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+HardState Term:1 Vote:1 Commit:1
+Entries:
+1/2 EntryNormal "foo"
+CommittedEntries:
+1/1 EntryNormal ""
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1) learners=(2)
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 2 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 2 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 3 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 3 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 2 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 2 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 2 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 3 [term: 0] received a MsgVote message with higher term from 1 [term: 1]
+raft2024/05/31 11:46:32 INFO: 3 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 3 [logterm: 0, index: 0, vote: 0] cast MsgVote for 1 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:0 State:StateCandidate
+HardState Term:1 Vote:1 Commit:0
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:1 State:StateLeader
+Entries:
+1/1 EntryNormal ""
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+HardState Term:1 Vote:1 Commit:1
+CommittedEntries:
+1/1 EntryNormal ""
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Entries:
+1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+HardState Term:1 Vote:1 Commit:4
+CommittedEntries:
+1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+CommittedEntries:
+1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:0 State:StateCandidate
+HardState Term:1 Vote:1 Commit:0
+Messages:
+1->AppendThread MsgStorageAppend Term:1 Log:0/0 Vote:1 Responses:[1->1 MsgVoteResp Term:1 Log:0/0]
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: raft.node: 1 elected leader 1 at term 1
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Lead:1 State:StateLeader
+Entries:
+1/1 EntryNormal ""
+Messages:
+1->AppendThread MsgStorageAppend Term:0 Log:0/0 Entries:[1/1 EntryNormal ""] Responses:[1->1 MsgAppResp Term:1 Log:0/1, AppendThread->1 MsgStorageAppendResp Term:1 Log:1/1]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+HardState Term:1 Vote:1 Commit:1
+CommittedEntries:
+1/1 EntryNormal ""
+Messages:
+1->AppendThread MsgStorageAppend Term:1 Log:0/0 Commit:1 Vote:1
+1->ApplyThread MsgStorageApply Term:0 Log:0/0 Entries:[1/1 EntryNormal ""] Responses:[ApplyThread->1 MsgStorageApplyResp Term:0 Log:0/0 Entries:[1/1 EntryNormal ""]]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+Entries:
+1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Messages:
+1->AppendThread MsgStorageAppend Term:0 Log:0/0 Entries:[1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[1->1 MsgAppResp Term:1 Log:0/2, AppendThread->1 MsgStorageAppendResp Term:1 Log:1/2]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+HardState Term:1 Vote:1 Commit:2
+Entries:
+1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+CommittedEntries:
+1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Messages:
+1->AppendThread MsgStorageAppend Term:1 Log:0/0 Commit:2 Vote:1 Entries:[1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[1->1 MsgAppResp Term:1 Log:0/3, AppendThread->1 MsgStorageAppendResp Term:1 Log:1/3]
+1->ApplyThread MsgStorageApply Term:0 Log:0/0 Entries:[1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[ApplyThread->1 MsgStorageApplyResp Term:0 Log:0/0 Entries:[1/2 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=true:
+HardState Term:1 Vote:1 Commit:3
+Entries:
+1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+CommittedEntries:
+1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Messages:
+1->AppendThread MsgStorageAppend Term:1 Log:0/0 Commit:3 Vote:1 Entries:[1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[1->1 MsgAppResp Term:1 Log:0/4, AppendThread->1 MsgStorageAppendResp Term:1 Log:1/4]
+1->ApplyThread MsgStorageApply Term:0 Log:0/0 Entries:[1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[ApplyThread->1 MsgStorageApplyResp Term:0 Log:0/0 Entries:[1/3 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+CommittedEntries:
+1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Messages:
+1->ApplyThread MsgStorageApply Term:0 Log:0/0 Entries:[1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"] Responses:[ApplyThread->1 MsgStorageApplyResp Term:0 Log:0/0 Entries:[1/4 EntryNormal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 1, commit: 10, applied: 1, lastindex: 10, lastterm: 1]
+raft2024/05/31 11:46:32 INFO: emitted ready: Ready MustSync=false:
+CommittedEntries:
+1/2 EntryNormal "a"
+1/3 EntryNormal "a"
+1/4 EntryNormal "a"
+1/5 EntryNormal "a"
+1/6 EntryNormal "a"
+1/7 EntryNormal "a"
+1/8 EntryNormal "a"
+1/9 EntryNormal "a"
+1/10 EntryNormal "a"
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 1 [term: 1] received a MsgApp message with higher term from 0 [term: 2]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 2
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [term: 1] received a MsgApp message with higher term from 0 [term: 2]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 2
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 [term: 1] received a MsgApp message with higher term from 0 [term: 2]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 2
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [term: 2] ignored a MsgApp message with lower term from 0 [term: 1]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 1
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 2
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 2
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 2
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 2
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 2
+--- FAIL: TestFollowerStartElection (0.00s)
+    raft_paper_test.go:171: state = StateLeader, want StateCandidate
+    raft_paper_test.go:174: vote for self = false, want true
+    raft_paper_test.go:183: msgs = [{MsgApp 2 1 2 0 0 [{2 1 EntryNormal []}] 0 0 <nil> false 0 [] []} {MsgApp 3 1 2 0 0 [{2 1 EntryNormal []}] 0 0 <nil> false 0 [] []} {MsgVote 2 1 2 0 0 [] 0 0 <nil> false 0 [] []} {MsgVote 3 1 2 0 0 [] 0 0 <nil> false 0 [] []}], want [{MsgVote 2 1 2 0 0 [] 0 0 <nil> false 0 [] []} {MsgVote 3 1 2 0 0 [] 0 0 <nil> false 0 [] []}]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 1
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 2
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 2
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 2
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 2
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 2
+--- FAIL: TestCandidateStartNewElection (0.00s)
+    raft_paper_test.go:171: state = StateLeader, want StateCandidate
+    raft_paper_test.go:174: vote for self = false, want true
+    raft_paper_test.go:183: msgs = [{MsgApp 2 1 2 0 0 [{2 1 EntryNormal []}] 0 0 <nil> false 0 [] []} {MsgApp 3 1 2 0 0 [{2 1 EntryNormal []}] 0 0 <nil> false 0 [] []} {MsgVote 2 1 2 0 0 [] 0 0 <nil> false 0 [] []} {MsgVote 3 1 2 0 0 [] 0 0 <nil> false 0 [] []}], want [{MsgVote 2 1 2 0 0 [] 0 0 <nil> false 0 [] []} {MsgVote 3 1 2 0 0 [] 0 0 <nil> false 0 [] []}]
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3 4 5)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3,4,5], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 4 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 5 at term 1
+raft2024/05/31 11:46:32 INFO: 1 received MsgVoteResp from 1 at term 1
+raft2024/05/31 11:46:32 INFO: 1 has received 1 MsgVoteResp votes and 0 vote rejections
+raft2024/05/31 11:46:32 INFO: 1 became leader at term 1
+--- FAIL: TestLeaderElectionInOneRoundRPC (0.00s)
+    raft_paper_test.go:228: #6: state = StateLeader, want StateFollower
+    raft_paper_test.go:228: #7: state = StateLeader, want StateFollower
+    raft_paper_test.go:228: #8: state = StateLeader, want StateFollower
+    raft_paper_test.go:228: #9: state = StateLeader, want StateCandidate
+    raft_paper_test.go:228: #10: state = StateLeader, want StateCandidate
+    raft_paper_test.go:228: #11: state = StateLeader, want StateCandidate
+    raft_paper_test.go:228: #12: state = StateLeader, want StateCandidate
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 0] cast MsgVote for 2 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 0] cast MsgVote for 3 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 2] cast MsgVote for 2 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 3] cast MsgVote for 3 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 2] rejected MsgVote from 3 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0, vote: 3] rejected MsgVote from 2 [logterm: 0, index: 0] at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 1
+raft2024/05/31 11:46:32 INFO: 1 switched to configuration voters=(1 2 3)
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 0
+raft2024/05/31 11:46:32 INFO: newRaft 1 [peers: [1,2,3], term: 0, commit: 0, applied: 0, lastindex: 0, lastterm: 0]
+raft2024/05/31 11:46:32 INFO: 1 is starting a new election at term 0
+raft2024/05/31 11:46:32 INFO: 1 became candidate at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 2 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [logterm: 0, index: 0] sent MsgVote request to 3 at term 1
+raft2024/05/31 11:46:32 INFO: 1 [term: 1] received a MsgApp message with higher term from 2 [term: 2]
+raft2024/05/31 11:46:32 INFO: 1 became follower at term 2
+--- FAIL: TestCandidateElectionTimeoutRandomized (0.00s)
+panic: invalid transition [leader -> candidate] [recovered]
+	panic: invalid transition [leader -> candidate]
+
+goroutine 364 [running]:
+testing.tRunner.func1.2({0x102eff140, 0x102f9e218})
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1631 +0x1c4
+testing.tRunner.func1()
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1634 +0x33c
+panic({0x102eff140?, 0x102f9e218?})
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/runtime/panic.go:770 +0x124
+go.etcd.io/raft/v3.(*raft).becomeCandidate(0x102f1cf20?)
+	/Users/rememberiom/Desktop/etcd-io_raft/raft.go:876 +0x188
+go.etcd.io/raft/v3.testNonleaderElectionTimeoutRandomized(0x1400031c000, 0x1)
+	/Users/rememberiom/Desktop/etcd-io_raft/raft_paper_test.go:319 +0x1b8
+go.etcd.io/raft/v3.TestCandidateElectionTimeoutRandomized(0x1400031c000)
+	/Users/rememberiom/Desktop/etcd-io_raft/raft_paper_test.go:304 +0x80
+testing.tRunner(0x1400031c000, 0x102f9b720)
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1689 +0xec
+created by testing.(*T).Run in goroutine 1
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1742 +0x318
+FAIL	go.etcd.io/raft/v3	0.477s
+ok  	go.etcd.io/raft/v3/confchange	0.845s
+--- FAIL: TestDataDriven (0.00s)
+    --- FAIL: TestDataDriven/joint_vote (0.00s)
+        datadriven.go:316: 
+            panic during testdata/joint_vote.txt:10:
+            
+panic: runtime error: index out of range [0] with length 0 [recovered]
+	panic: runtime error: index out of range [0] with length 0 [recovered]
+	panic: runtime error: index out of range [0] with length 0
+
+goroutine 37 [running]:
+testing.tRunner.func1.2({0x1029ebf60, 0x14000127410})
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1631 +0x1c4
+testing.tRunner.func1()
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1634 +0x33c
+panic({0x1029ebf60?, 0x14000127410?})
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/runtime/panic.go:770 +0x124
+github.com/cockroachdb/datadriven.runDirective.func1.1()
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:317 +0xc4
+panic({0x1029ebf60?, 0x14000127410?})
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/runtime/panic.go:770 +0x124
+go.etcd.io/raft/v3/quorum.MajorityConfig.VoteResult(0x14000159980, 0x102ad6040?)
+	/Users/rememberiom/Desktop/etcd-io_raft/quorum/majority.go:170 +0x144
+go.etcd.io/raft/v3/quorum.JointConfig.VoteResult({0x14000159980, 0x14000159950}, 0x140001598b0)
+	/Users/rememberiom/Desktop/etcd-io_raft/quorum/joint.go:62 +0x2c
+go.etcd.io/raft/v3/quorum.TestDataDriven.func1.1(0x1400012a9c0, 0x140001800b8)
+	/Users/rememberiom/Desktop/etcd-io_raft/quorum/datadriven_test.go:237 +0xe88
+github.com/cockroachdb/datadriven.runDirective.func1(0x1400012a9c0?, 0x0?, 0x0?)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:320 +0x5c
+github.com/cockroachdb/datadriven.runDirective(0x1400012a9c0, 0x14000180090, 0x1029f99f8)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:325 +0x50
+github.com/cockroachdb/datadriven.runDirectiveOrSubTest(0x1400012a9c0, 0x14000180090, {0x0, 0x0}, 0x1029f99f8)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:194 +0x70
+github.com/cockroachdb/datadriven.runTestInternal(0x1400012a9c0, {0x140001273c8, 0x17}, {0x1029fad28, 0x140001140b0}, 0x1029f99f8, 0x0)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:167 +0x78
+github.com/cockroachdb/datadriven.RunTest(0x1400012a9c0, {0x140001273c8, 0x17}, 0x1029f99f8)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:135 +0x16c
+go.etcd.io/raft/v3/quorum.TestDataDriven.func1(0x140001273c8?, {0x140001273c8?, 0x0?})
+	/Users/rememberiom/Desktop/etcd-io_raft/quorum/datadriven_test.go:38 +0x28
+github.com/cockroachdb/datadriven.Walk(0x1400012a9c0, {0x140001273c8, 0x17}, 0x1029f99f0)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:412 +0x100
+github.com/cockroachdb/datadriven.Walk.func1(0x1400012a9c0)
+	/Users/rememberiom/go/pkg/mod/github.com/cockroachdb/datadriven@v1.0.2/datadriven.go:425 +0x90
+testing.tRunner(0x1400012a9c0, 0x1400018b5c0)
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1689 +0xec
+created by testing.(*T).Run in goroutine 35
+	/opt/homebrew/Cellar/go/1.22.3/libexec/src/testing/testing.go:1742 +0x318
+FAIL	go.etcd.io/raft/v3/quorum	0.622s
+ok  	go.etcd.io/raft/v3/raftpb	0.706s
+ok  	go.etcd.io/raft/v3/rafttest	1.102s
+ok  	go.etcd.io/raft/v3/tracker	0.436s
+FAIL
+[1m[0;31mFAIL: 'unit' failed at 2024년 5월 31일 금요일 11시 46분 33초 KST
+[0mmake: *** [test] Error 255
+/Users/rememberiom/Desktop/etcd-io_raft/quorum/quorumC

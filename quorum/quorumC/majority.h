@@ -37,6 +37,8 @@ void cinsertionSort(void *p, int size);
 
 Index cCommittedIndex(MajorityConfig, mapAckIndexer);
 
+VoteResult cVoteResult(VoteEntry *votes, int c_size);
+
 int compare_by_index(const void *a, const void *b);
 int compare_by_id(const void *a, const void *b);
 int compare(const void *a, const void *b);

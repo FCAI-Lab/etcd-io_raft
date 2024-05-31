@@ -158,14 +158,21 @@ func (c MajorityConfig) CommittedIndex(l AckedIndexer) Index {
 // yes/no has been reached), won (a quorum of yes has been reached), or lost (a
 // quorum of no has been reached).
 func (c MajorityConfig) VoteResult(votes map[uint64]bool) VoteResult {
-	var cVotes []C.VoteEntry
+	var c_votes []C.VoteEntry
 	for v_cur, ok_cur := range votes {
-		cVotes = append(cVotes, C.VoteEntry{v: C.uint64_t(v_cur), ok: C.bool(ok_cur)})
+		c_votes = append(c_votes, C.VoteEntry{v: C.uint64_t(v_cur), ok: C.bool(ok_cur)})
 	}
 
-	result := int((*C.VoteEntry)(unsafe.Pointer(&cVotes[0]), C.int(len(c))))
+	c_len := C.int(len(c))
 
-	return result
+	var c_range_votes *C.VoteEntry
+	if len(c) > 0 {
+		c_range_votes = &c_votes[0]
+	}
+
+	result := int(C.cVoteResult(c_range_votes, c_len))
+
+	return VoteResult(result)
 }
 
 /*

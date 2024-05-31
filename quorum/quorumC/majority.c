@@ -138,7 +138,7 @@ Index cCommittedIndex(MajorityConfig c, mapAckIndexer l) {
   return (Index)srt[pos];
 }
 
-VoteResult cVoteResult(VoteEntry **votes, int c_size) {
+VoteResult cVoteResult(VoteEntry *votes, int c_size) {
   if (c_size == 0) {
     // By convention, the elections on an empty config win. This comes in
     // handy with joint quorums because it'll make a half-populated joint
@@ -149,8 +149,8 @@ VoteResult cVoteResult(VoteEntry **votes, int c_size) {
   int votedCnt = 0;
   int missing = 0;
   for (size_t i = 0; i < c_size; ++i) {
-    uint64_t v = votes[i]->v;
-    bool ok = votes[i]->ok;
+    uint64_t v = votes[i].v;
+    bool ok = votes[i].ok;
     if (!ok) {
       missing++;
       continue;
